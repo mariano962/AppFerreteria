@@ -16,3 +16,65 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.FondoHome{
+  background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wallpaperup.com%2F1198704%2Fherramientas_trabajo_utensilios.html&psig=AOvVaw00i5GOGZHr0EG2FpnnsINB&ust=1668712497157000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCOjzt9C0s_sCFQAAAAAdAAAAABAE);
+  background-position: initial;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+.FondoClientes{
+  background-image: url("../Imagen/AmarilloPastel.jpg");
+  background-position: initial;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+.FondoMotosierras{
+  background-image: url("../Imagen/Degrade.jpg");
+  background-position: initial;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+.FondoRentals{
+  background-image: url("../Imagen/Violeta.jpg");
+  background-position: initial;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+.FondoReturn{
+  background-image: url();
+  background-position: initial;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+
+.TituloIndex{
+  font-size: 4em;
+  text-shadow: 4px 3px 6px rgba(71, 71, 71, 0.541);
+}
+ 
+ .TituloEditCreate{
+  text-align: center;
+  font-size: 3em;
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 100px #fff,
+    0 0 200px rgb(255, 255, 255),
+    0 0 10px rgb(8, 32, 5),
+    0 0 10px rgb(14, 36, 6),
+    0 0 10px rgb(4, 84, 95),
+    0 0 10px rgb(95, 4, 91),
+    0 0 10px rgb(0, 17, 255);
+}
+
+.ImagenMotosierra{
+  width: 60px;
+  height: 60px;
+}

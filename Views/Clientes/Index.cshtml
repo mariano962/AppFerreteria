@@ -1,0 +1,56 @@
+@model IEnumerable<AppFerreteria.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<body>
+    <h1 class="TituloIndex">Clientes</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteApellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientePhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteDNI)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteApellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientePhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteDNI)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ClienteID" class="btn btn-warning">Editar</a> |
+                @* <a asp-action="Details" asp-route-id="@item.ClienteID" class="btn btn-warning">Detalle</a> | *@
+                <a asp-action="Delete" asp-route-id="@item.ClienteID" class="btn btn-warning">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+</body>

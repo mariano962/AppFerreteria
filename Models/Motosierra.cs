@@ -7,13 +7,6 @@ namespace AppFerreteria.Models
         [Key]
 
         public int MotosierraID { get; set; }
-
-
-        [Display(Name = "Nombre de la motosierra")]
-        [Required(ErrorMessage = "Este valor es obligatorio.")]
-        [MaxLength(50, ErrorMessage = "El largo maximo es de {0} caracteres.")]
-        public string? MotosierraName { get; set; }
-
         
         [Display(Name = "Codigo Alfanumerico")]
         [Required(ErrorMessage = "Este valor es obligatorio.")]
@@ -29,7 +22,7 @@ namespace AppFerreteria.Models
         [Display(Name = "Codigo de Fabrica")]
         [Required(ErrorMessage = "Este valor es obligatorio.")]
         [MaxLength(50, ErrorMessage = "El largo maximo es de {0} caracteres.")]
-        public string? Codigodefabrica { get; set; }
+        public int? Codigodefabrica { get; set; }
 
 
       
