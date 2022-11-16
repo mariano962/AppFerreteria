@@ -27,7 +27,7 @@ namespace AppFerreteria.Models
 
 
         [Display(Name = "Motosierra ")]
-       public  int? MotosierraID { get; set; }
+       public  int MotosierraID { get; set; }
 
         public  string? CodigoAlfanumericoMotosierra  { get; set; }
 

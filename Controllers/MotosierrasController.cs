@@ -70,10 +70,12 @@ namespace AppFerreteria.Controllers
                     }
                     motosierra.MotosierraImg = Img;
 
+                   
+                }
+
                     _context.Add(motosierra);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
-                }
 
             }
             return View(motosierra);
@@ -100,7 +102,7 @@ namespace AppFerreteria.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MotosierraID,CodigoAlfanumericoMotosierra,PrecioMotosierra,Codigodefabrica,MotosierraImg,EstaAlquilada,isDeleted")] Motosierra motosierra)
+        public async Task<IActionResult> Edit(int id, [Bind("MotosierraID,CodigoAlfanumericoMotosierra,PrecioMotosierra,Codigodefabrica,EstaAlquilada,isDeleted")] Motosierra motosierra, IFormFile MotosierraImg)
         {
             if (id != motosierra.MotosierraID)
             {
@@ -111,6 +113,20 @@ namespace AppFerreteria.Controllers
             {
                 try
                 {
+                    if (MotosierraImg != null && MotosierraImg.Length > 0)
+                {
+                    byte[]? Img = null;
+                    using (var fs1 = MotosierraImg.OpenReadStream())
+                    using (var ms1 = new MemoryStream())
+                    {
+                        fs1.CopyTo(ms1);
+                        Img = ms1.ToArray();
+                    }
+                    motosierra.MotosierraImg = Img;
+
+                   
+                }
+
                     _context.Update(motosierra);
                     await _context.SaveChangesAsync();
                 }

@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<body>
+<body class="FondoMotosierras">
     <h1>Motosierras</h1>
 
 <p>
@@ -46,15 +46,21 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Codigodefabrica)
             </td>
+           <td>
+                        @{
+                            var base64 = Convert.ToBase64String(item.MotosierraImg);
+                            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                        }
+
+                        <img src="@imgSrc" class="ImagenMotosierras" />
+                    </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MotosierraImg)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.EstaAlquilada)
             </td>
-            <td>
+            @* <td>
                 @Html.DisplayFor(modelItem => item.isDeleted)
-            </td>
+            </td> *@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.MotosierraID" class="btn btn-secondary">Editar</a> |
                 @* <a asp-action="Details" asp-route-id="@item.MotosierraID">Details</a> | *@
