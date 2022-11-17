@@ -3,12 +3,12 @@
 @{
     ViewData["Title"] = "Details";
 }
-
-<h1>Details</h1>
+<body class="FondoReturn">
+   
 
 <div>
-    <h4>Return</h4>
-    <hr />
+    <h1 class="TituloIndex">Detalle del alquiler</h1>
+   
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ReturnDate)
@@ -16,30 +16,30 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ReturnDate)
         </dd>
-        <dt class = "col-sm-2">
+        @* <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ClienteApellido)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ClienteApellido)
-        </dd>
+        </dd> *@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ClienteName)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ClienteName)
         </dd>
-        <dt class = "col-sm-2">
+        @* <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Cliente)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Cliente.ClienteApellido)
-        </dd>
-        <dt class = "col-sm-2">
+        </dd> *@
+        @* <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CodigoAlfanumericoMotosierra)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CodigoAlfanumericoMotosierra)
-        </dd>
+        </dd> *@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Motosierra)
         </dt>
@@ -49,6 +49,8 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.ReturnID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.ReturnID" class="btn btn-secondary">Editar</a> 
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
 </div>
+
+</body>

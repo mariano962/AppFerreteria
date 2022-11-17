@@ -165,21 +165,28 @@ namespace AppFerreteria.Controllers
         }
 
         // POST: Motosierras/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        // [HttpPost, ActionName("Delete")]
+        // [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Motosierra == null)
-            {
-                return Problem("Entity set 'AppFerreteriaContext.Motosierra'  is null.");
-            }
             var motosierra = await _context.Motosierra.FindAsync(id);
             if (motosierra != null)
             {
-                _context.Motosierra.Remove(motosierra);
+                var motosierraRental = (from a in _context.Rental where a.MotosierraID == id select a).Count();
+                if(motosierraRental == 0)
+                {
+                    _context.Motosierra.Remove(motosierra);
+                    await _context.SaveChangesAsync();
+                }
+                else
+                {
+                    motosierra.isDeleted = true;
+                    motosierra.CodigoAlfanumericoMotosierra = "Eliminada";
+                    _context.Update(motosierra);
+                    await _context.SaveChangesAsync();
+                }
             }
-            
-            await _context.SaveChangesAsync();
+
             return RedirectToAction(nameof(Index));
         }
 

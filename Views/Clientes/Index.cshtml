@@ -4,11 +4,11 @@
     ViewData["Title"] = "Index";
 }
 
-<body>
+<body class="FondoClientes">
     <h1 class="TituloIndex">Clientes</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success">Crear cliente</a>
 </p>
 <table class="table">
     <thead>
@@ -46,11 +46,34 @@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ClienteID" class="btn btn-warning">Editar</a> |
                 @* <a asp-action="Details" asp-route-id="@item.ClienteID" class="btn btn-warning">Detalle</a> | *@
-                <a asp-action="Delete" asp-route-id="@item.ClienteID" class="btn btn-warning">Eliminar</a>
+                 <a onclick="EliminarCliente(@item.ClienteID)" class="btn btn-warning" >Eliminar</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+<script>
+    function EliminarCliente (id){ Swal.fire({
+      title: 'Estas seguro?',
+     text: "¡No podrás revertir esto!",
+     icon: 'warning',
+     showCancelButton: true,
+     confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+     confirmButtonText: 'Si, borrar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+         Swal.fire(
+           'Cliente Eliminado!', )
+    function redirigir (){
+        location.href = "../../Clientes/DeleteConfirmed/" + id; 
+    }
+    
+  }
+  setTimeout (redirigir, 2000);
+})}
+   
+</script>
 
 </body>

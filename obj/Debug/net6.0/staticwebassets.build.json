@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "M4YRs5HggeIn9TIDPNAGldkTT0dR44krptAb8E+kzEI=",
+  "Hash": "phhxjIjDOcrnpLAZH/1bvyM3iX370OdlHdukhzKyShU=",
   "Source": "AppFerreteria",
   "BasePath": "_content/AppFerreteria",
   "Mode": "Default",
@@ -102,6 +102,40 @@
       "OriginalItemSpec": "wwwroot\\Imagen\\AmarilloPastel.jpg"
     },
     {
+      "Identity": "C:\\Users\\ASUS\\Desktop\\AppFerreteria\\wwwroot\\Imagen\\arcoriris.jpg",
+      "SourceId": "AppFerreteria",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\Desktop\\AppFerreteria\\wwwroot\\",
+      "BasePath": "_content/AppFerreteria",
+      "RelativePath": "Imagen/arcoriris.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagen\\arcoriris.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\Desktop\\AppFerreteria\\wwwroot\\Imagen\\celestePast.jpg",
+      "SourceId": "AppFerreteria",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\Desktop\\AppFerreteria\\wwwroot\\",
+      "BasePath": "_content/AppFerreteria",
+      "RelativePath": "Imagen/celestePast.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagen\\celestePast.jpg"
+    },
+    {
       "Identity": "C:\\Users\\ASUS\\Desktop\\AppFerreteria\\wwwroot\\Imagen\\Degrade.jpg",
       "SourceId": "AppFerreteria",
       "SourceType": "Discovered",
@@ -117,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Imagen\\Degrade.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\Desktop\\AppFerreteria\\wwwroot\\Imagen\\verdePast.jpg",
+      "SourceId": "AppFerreteria",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\Desktop\\AppFerreteria\\wwwroot\\",
+      "BasePath": "_content/AppFerreteria",
+      "RelativePath": "Imagen/verdePast.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagen\\verdePast.jpg"
     },
     {
       "Identity": "C:\\Users\\ASUS\\Desktop\\AppFerreteria\\wwwroot\\Imagen\\Violeta.jpg",
@@ -151,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\Desktop\\AppFerreteria\\wwwroot\\js\\sweetalert2.all.min.js",
+      "SourceId": "AppFerreteria",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\Desktop\\AppFerreteria\\wwwroot\\",
+      "BasePath": "_content/AppFerreteria",
+      "RelativePath": "js/sweetalert2.all.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\sweetalert2.all.min.js"
     },
     {
       "Identity": "C:\\Users\\ASUS\\Desktop\\AppFerreteria\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",

@@ -136,10 +136,11 @@ namespace AppFerreteria.Controllers
         }
 
         // POST: Clientes/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        // [HttpPost, ActionName("Delete")]
+        // [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+
             if (_context.Cliente == null)
             {
                 return Problem("Entity set 'AppFerreteriaContext.Cliente'  is null.");
@@ -147,10 +148,20 @@ namespace AppFerreteria.Controllers
             var cliente = await _context.Cliente.FindAsync(id);
             if (cliente != null)
             {
-                _context.Cliente.Remove(cliente);
+                var ClienteRental = (from a in _context.Rental where a.ClienteID == id select a).Count();
+                if (ClienteRental == 0)
+                {
+                 _context.Cliente.Remove(cliente);
+                  await _context.SaveChangesAsync();
+                    
+                }
+                else
+                {
+                    
+                }
             }
             
-            await _context.SaveChangesAsync();
+           
             return RedirectToAction(nameof(Index));
         }
 

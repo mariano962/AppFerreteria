@@ -4,49 +4,55 @@
     ViewData["Title"] = "Index";
 }
 
-<body class="FondoMotosierras">
-    <h1>Motosierras</h1>
+<html>
 
-<p>
-    <a asp-action="Create" class="btn btn-success">Crear Motosierra</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CodigoAlfanumericoMotosierra)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PrecioMotosierra)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Codigodefabrica)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MotosierraImg)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EstaAlquilada)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.isDeleted)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodigoAlfanumericoMotosierra)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PrecioMotosierra)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Codigodefabrica)
-            </td>
-           <td>
+</html>
+
+<body class="FondoMotosierras">
+    <h1 class="TituloIndex">Motosierras</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-success">Crear Motosierra</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CodigoAlfanumericoMotosierra)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PrecioMotosierra)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigodefabrica)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MotosierraImg)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EstaAlquilada)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.isDeleted)
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CodigoAlfanumericoMotosierra)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrecioMotosierra)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigodefabrica)
+                    </td>
+                    <td>
                         @{
                             var base64 = Convert.ToBase64String(item.MotosierraImg);
                             var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
@@ -54,21 +60,45 @@
 
                         <img src="@imgSrc" class="ImagenMotosierras" />
                     </td>
-            <td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EstaAlquilada)
-            </td>
-            @* <td>
-                @Html.DisplayFor(modelItem => item.isDeleted)
-            </td> *@
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.MotosierraID" class="btn btn-secondary">Editar</a> |
-                @* <a asp-action="Details" asp-route-id="@item.MotosierraID">Details</a> | *@
-                <a asp-action="Delete" asp-route-id="@item.MotosierraID" class="btn btn-secondary">Eliminar</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                    
+                    <td>
+                            @Html.DisplayFor(modelItem => item.EstaAlquilada)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.isDeleted)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.MotosierraID" class="btn btn-warning">Editar</a> |
+                            @* <a asp-action="Details" asp-route-id="@item.MotosierraID">Details</a> | *@
+                       <a onclick="Eliminar MotosierraEliminada(@item.MotosierraID)" class="btn btn-warning" >Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <script>
+    function MotosierraEliminada (id){ 
+        var eliminar = Swal.fire({
+      title: 'Estas seguro?',
+     text: "¡No podrás revertir esto!",
+     icon: 'warning',
+     showCancelButton: true,
+     confirmButtonColor: '#3085d6',
+     cancelButtonColor: '#d33',
+     confirmButtonText: 'Si, borrar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+         Swal.fire(
+           'Motosierra Eliminada!', )
+    function redirigir (){
+        location.href = "../../Motosierras/DeleteConfirmed/" + id; 
+    }
+    
+  }
+  setTimeout (redirigir, 2000);
+})}
+   
+</script>
 
 </body>

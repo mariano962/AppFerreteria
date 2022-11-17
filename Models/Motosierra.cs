@@ -21,8 +21,8 @@ namespace AppFerreteria.Models
 
         [Display(Name = "Codigo de Fabrica")]
         [Required(ErrorMessage = "Este valor es obligatorio.")]
-        
-        public int Codigodefabrica { get; set; }
+        [MaxLength(50, ErrorMessage = "El largo maximo es de {0} caracteres.")]
+        public string? Codigodefabrica { get; set; }
 
 
       

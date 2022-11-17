@@ -50,7 +50,7 @@ namespace AppFerreteria.Controllers
         {
             ViewData["ClienteID"] = new SelectList(_context.Cliente, "ClienteID", "ClienteApellido");
             // ViewData["MotosierraID"] = new SelectList(_context.Motosierra, "MotosierraID", "CodigoAlfanumericoMotosierra");
-            ViewData["MotosierraID"] = new SelectList(_context.Motosierra.Where(x => x.EstaAlquilada == false && x.isDeleted == false), "MotosierraID", "CodigoAlfanumericoMotosierra");
+            ViewData["MotosierraID"] = new SelectList(_context.Motosierra.Where(x => x.EstaAlquilada == true && x.isDeleted == false), "MotosierraID", "CodigoAlfanumericoMotosierra");
             return View();
         }
 
@@ -69,13 +69,13 @@ namespace AppFerreteria.Controllers
                 @return.ClienteName = Cliente.ClienteName + " " + Cliente.ClienteApellido;
                 @return.ClienteID = Cliente.ClienteID;
                 @return.MotosierraID = Motosierra.MotosierraID;
-                Motosierra.EstaAlquilada = true;
+                Motosierra.EstaAlquilada = false;
                 _context.Add(@return);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ClienteID"] = new SelectList(_context.Cliente, "ClienteID", "ClienteName", @return.ClienteID);
-            ViewData["MotosierraID"] = new SelectList(_context.Motosierra.Where(x => x.EstaAlquilada == false && x.isDeleted == false), "MotosierraID", "CodigoAlfanumericoMotosierra");
+            ViewData["MotosierraID"] = new SelectList(_context.Motosierra.Where(x => x.EstaAlquilada == true && x.isDeleted == false), "MotosierraID", "CodigoAlfanumericoMotosierra");
             return View(@return);
         }
 

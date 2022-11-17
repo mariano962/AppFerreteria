@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppFerreteria.Migrations
 {
     [DbContext(typeof(AppFerreteriaContext))]
-    partial class AppFerreteriaContextModelSnapshot : ModelSnapshot
+    [Migration("20221117004512_CambioMotosierra")]
+    partial class CambioMotosierra
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,8 +71,7 @@ namespace AppFerreteria.Migrations
 
                     b.Property<string>("Codigodefabrica")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("EstaAlquilada")
                         .HasColumnType("bit");

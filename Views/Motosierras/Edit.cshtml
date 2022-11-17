@@ -4,10 +4,10 @@
     ViewData["Title"] = "Edit";
 }
 
-<body>
-    <h1>Edit</h1>
+<body class="FondoMotosierras">
+    
 
-<h4>Motosierra</h4>
+<h4 class="TituloEditCreate">Motosierra</h4>
 
 <div class="row">
     <div class="col-md-4">
@@ -16,7 +16,7 @@
             <input type="hidden" asp-for="MotosierraID" />
             <div class="form-group">
                 <label asp-for="CodigoAlfanumericoMotosierra" class="control-label"></label>
-                <input asp-for="CodigoAlfanumericoMotosierra" class="form-control" />
+                <input asp-for="CodigoAlfanumericoMotosierra" class="form-control" onkeyup="this.value = this.value.toUpperCase()" />
                 <span asp-validation-for="CodigoAlfanumericoMotosierra" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -33,7 +33,7 @@
                 <label asp-for="MotosierraImg" class="control-label"></label>
                 <input asp-for="MotosierraImg" class="form-control" type="file" />
                 <span asp-validation-for="MotosierraImg" class="text-danger"></span>
-            </div>
+            </div> <br>
             @* <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="EstaAlquilada" /> @Html.DisplayNameFor(model => model.EstaAlquilada)
@@ -52,7 +52,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Volver a la lista</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
 </div>
 
 </body>

@@ -4,10 +4,11 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<body class="FondoReturn">
+    
 
-<h4>Return</h4>
-<hr />
+<h4 class="TituloEditCreate">Devoluciones</h4>
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -42,15 +43,16 @@
                 <label asp-for="MotosierraID" class="control-label"></label>
                 <select asp-for="MotosierraID" class="form-control" asp-items="ViewBag.MotosierraID"></select>
                 <span asp-validation-for="MotosierraID" class="text-danger"></span>
-            </div>
+            </div><br>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
-</div>
+</div><br>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
 </div>
 
+</body>
