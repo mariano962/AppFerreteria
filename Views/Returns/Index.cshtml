@@ -1,7 +1,7 @@
 @model IEnumerable<AppFerreteria.Models.Return>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Devolución";
 }
 
 <body class="FondoReturn">
@@ -56,7 +56,7 @@
                 @Html.DisplayFor(modelItem => item.Motosierra.CodigoAlfanumericoMotosierra)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ReturnID" class="btn btn-warning">Editar</a> |
+                @* <a asp-action="Edit" asp-route-id="@item.ReturnID" class="btn btn-warning">Editar</a> | *@
                 <a asp-action="Details" asp-route-id="@item.ReturnID" class="btn btn-warning">Detalle</a> 
                 @* <a asp-action="Delete" asp-route-id="@item.ReturnID">Delete</a> *@
             </td>

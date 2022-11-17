@@ -63,16 +63,7 @@ body {
  .TituloEditCreate{
   text-align: center;
   font-size: 3em;
-  color: #fff;
-  text-shadow:
-    0 0 5px #fff,
-    0 0 100px #fff,
-    0 0 200px rgb(255, 255, 255),
-    0 0 10px rgb(8, 32, 5),
-    0 0 10px rgb(14, 36, 6),
-    0 0 10px rgb(4, 84, 95),
-    0 0 10px rgb(95, 4, 91),
-    0 0 10px rgb(0, 17, 255);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .ImagenMotosierras{
@@ -111,4 +102,10 @@ body {
   width: 700px;
   height: 300px;
   object-fit:cover ;
+}
+
+.PalabrasFormularios{
+  font-family: 'Times New Roman', Times, serif;
+   color: black;
+    font-size: 1.1em;
 }

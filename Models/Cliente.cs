@@ -14,7 +14,7 @@ namespace AppFerreteria.Models
         [MaxLength(150, ErrorMessage = "El largo maximo es de {0} caracteres.")]
         public string? ClienteName { get; set; }
 
-        [Display(Name = "Apellido del cleinte")]
+        [Display(Name = "Apellido del cliente")]
         [Required(ErrorMessage = "Este valor es Obligatorio.")]
         [MaxLength(150, ErrorMessage = "El largo maximo es de {0} caracteres.")]
         public string? ClienteApellido { get; set; }
@@ -27,7 +27,7 @@ namespace AppFerreteria.Models
         public string? ClientePhone { get; set; }
 
 
-        [Display(Name = "DNI del Socío")]
+        [Display(Name = "DNI del Socio")]
         [Required(ErrorMessage = "Este valor es Obligatorio.")]
         [MaxLength(8, ErrorMessage = "El largo máximo es de {0} caracteres.")]
         public string? ClienteDNI { get; set; }

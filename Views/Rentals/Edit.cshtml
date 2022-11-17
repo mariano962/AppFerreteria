@@ -7,10 +7,10 @@
 <body class="FondoRentals">
     
 
-<h4 class="TituloEditCreate">Rental</h4>
+<h4 class="TituloEditCreate animate__animated animate__rotateInDownLeft">Rental</h4>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 PalabrasFormularios">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="RentalID" />
@@ -52,7 +52,7 @@
 </div>
 
 <div><br>
-    <a asp-action="Index" class="btn btn-secondary">Vovler a la lista</a>
+    <a asp-action="Index" class="btn btn-primary">Vovler a la lista</a>
 </div>
 </body>
 

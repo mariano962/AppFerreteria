@@ -1,16 +1,16 @@
 @model AppFerreteria.Models.Return
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Devolución";
 }
 
 <body class="FondoReturn">
    
 
-<h4 class="TituloEditCreate">Devoluciones</h4>
+<h4 class="TituloEditCreate animate__animated animate__fadeInUpBig">Crear Devolución</h4>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 PalabrasFormularios">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -44,14 +44,14 @@
                  @Html.DropDownList("MotosierraID", null, htmlAttributes: new { @class = "form-control" })
             </div><br>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Crear" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 <br>
 <div>
-    <a asp-action="Index" class="btn btn-primary">Volver a la lista</a>
+    <a asp-action="Index" class="btn btn-primary ">Volver a la lista</a>
 </div>
 
 
