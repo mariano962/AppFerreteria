@@ -98,3 +98,17 @@ body {
   text-align: center;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
+
+.FondoLogin{
+  background-image: url("../Imagen/AmarilloPastel.jpg");
+  background-position: initial;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.logo{
+  width: 700px;
+  height: 300px;
+  object-fit:cover ;
+}

@@ -11,9 +11,20 @@
 <body class="FondoMotosierras">
     <h1 class="TituloIndex">Motosierras</h1>
 
-    <p>
+   
+
+    @{if (User.Identity.IsAuthenticated)
+    {
+         <p>
         <a asp-action="Create" class="btn btn-success">Crear Motosierra</a>
-    </p>
+        </p>
+    }
+    else
+    {
+        
+    }
+    }
+
     <table class="table">
         <thead>
             <tr>
@@ -32,15 +43,17 @@
                 <th>
                     @Html.DisplayNameFor(model => model.EstaAlquilada)
                 </th>
-                <th>
+                @* <th>
                     @Html.DisplayNameFor(model => model.isDeleted)
-                </th>
+                </th> *@
                 <th></th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @{if (User.Identity.IsAuthenticated)
+            {
+                 @foreach (var item in Model)
             {
                 <tr>
                     <td>
@@ -64,9 +77,9 @@
                     <td>
                             @Html.DisplayFor(modelItem => item.EstaAlquilada)
                     </td>
-                    <td>
+                    @* <td>
                             @Html.DisplayFor(modelItem => item.isDeleted)
-                    </td>
+                    </td> *@
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.MotosierraID" class="btn btn-warning">Editar</a> |
                             @* <a asp-action="Details" asp-route-id="@item.MotosierraID">Details</a> | *@
@@ -74,6 +87,42 @@
                     </td>
                 </tr>
             }
+            }
+                else
+                {
+                     @foreach (var item in Model.Where(m => m.EstaAlquilada == false && m.isDeleted == false ))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CodigoAlfanumericoMotosierra)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrecioMotosierra)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigodefabrica)
+                    </td>
+                    <td>
+                        @{
+                            var base64 = Convert.ToBase64String(item.MotosierraImg);
+                            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                        }
+
+                        <img src="@imgSrc" class="ImagenMotosierras" />
+                    </td>
+                    
+                    <td>
+                            @Html.DisplayFor(modelItem => item.EstaAlquilada)
+                    </td>
+                    @* <td>
+                            @Html.DisplayFor(modelItem => item.isDeleted)
+                    </td> *@
+               
+                </tr>
+            }
+                }
+            }
+           
         </tbody>
     </table>
 

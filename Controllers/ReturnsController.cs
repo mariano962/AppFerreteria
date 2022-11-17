@@ -63,16 +63,33 @@ namespace AppFerreteria.Controllers
         {
             if (ModelState.IsValid)
             {
-                var Motosierra = (from a in _context.Motosierra where a.MotosierraID == @return.MotosierraID select a).SingleOrDefault();
-                var Cliente = (from a in _context.Cliente where a.ClienteID == @return.ClienteID select a).SingleOrDefault();
-                @return.CodigoAlfanumericoMotosierra = Motosierra.CodigoAlfanumericoMotosierra;
-                @return.ClienteName = Cliente.ClienteName + " " + Cliente.ClienteApellido;
-                @return.ClienteID = Cliente.ClienteID;
-                @return.MotosierraID = Motosierra.MotosierraID;
-                Motosierra.EstaAlquilada = false;
-                _context.Add(@return);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    var ClienteID = (from a in _context.Rental where a.ClienteID == @return.ClienteID && a.MotosierraID == @return.MotosierraID select a).SingleOrDefault();
+                    if (ClienteID != null)
+                    {
+                        if (ClienteID.RentalDate < @return.ReturnDate)
+                        {
+                                 var Motosierra = (from a in _context.Motosierra where a.MotosierraID == @return.MotosierraID select a).SingleOrDefault();
+                                 var Cliente = (from a in _context.Cliente where a.ClienteID == @return.ClienteID select a).SingleOrDefault();
+                                @return.CodigoAlfanumericoMotosierra = Motosierra.CodigoAlfanumericoMotosierra;
+                                @return.ClienteName = Cliente.ClienteName + " " + Cliente.ClienteApellido;
+                                @return.ClienteID = Cliente.ClienteID;
+                                @return.MotosierraID = Motosierra.MotosierraID;
+                                Motosierra.EstaAlquilada = false;
+                                _context.Add(@return);
+                                await _context.SaveChangesAsync();
+                                return RedirectToAction(nameof(Index));
+                        }
+                    }
+              
+                }
+                catch (System.Exception)
+                {
+                    
+                    throw;
+                }
+              
             }
             ViewData["ClienteID"] = new SelectList(_context.Cliente, "ClienteID", "ClienteName", @return.ClienteID);
             ViewData["MotosierraID"] = new SelectList(_context.Motosierra.Where(x => x.EstaAlquilada == true && x.isDeleted == false), "MotosierraID", "CodigoAlfanumericoMotosierra");
