@@ -46,7 +46,7 @@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ClienteID" class="btn btn-warning">Editar</a> |
                 @* <a asp-action="Details" asp-route-id="@item.ClienteID" class="btn btn-warning">Detalle</a> | *@
-                 <a onclick="EliminarCliente(@item.ClienteID)" class="btn btn-warning" >Eliminar</a>
+                 <a onclick="EliminarCliente(@item.ClienteID);" class="btn btn-warning" >Eliminar</a>
             </td>
         </tr>
 }

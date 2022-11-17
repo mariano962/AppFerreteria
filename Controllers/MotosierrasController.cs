@@ -169,7 +169,12 @@ namespace AppFerreteria.Controllers
         // [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+
             var motosierra = await _context.Motosierra.FindAsync(id);
+            if (motosierra.EstaAlquilada == true)
+            {
+                return RedirectToAction(nameof(Index));
+            }
             if (motosierra != null)
             {
                 var motosierraRental = (from a in _context.Rental where a.MotosierraID == id select a).Count();
