@@ -49,7 +49,7 @@ namespace AppFerreteria.Controllers
         public IActionResult Create()
         {
             ViewData["ClienteID"] = new SelectList(_context.Cliente, "ClienteID", "ClienteApellido");
-            ViewData["MotosierraID"] = new SelectList(_context.Motosierra.Where(x => x.EstaAlquilada == false && x.isDeleted == false), "MotosierraID", "CodigoAlfanumericoMotosierra");
+            ViewData["MotosierraID"] = new SelectList(_context.Motosierra.Where(x =>  x.Stock > 0 && x.isDeleted == false), "MotosierraID", "CodigoAlfanumericoMotosierra");
             
             return View();
         }
@@ -59,23 +59,47 @@ namespace AppFerreteria.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RentalID,RentalDate,ClienteID,ClienteApellido,ClienteName,MotosierraID,CodigoAlfanumericoMotosierra")] Rental rental)
+        public async Task<IActionResult> Create([Bind("RentalID,RentalDate,ClienteID,ClienteApellido,ClienteName,MotosierraID,Stock,MontoTotal,CodigoAlfanumericoMotosierra")] Rental rental)
         {
           if (ModelState.IsValid)
             {
                 var Motosierra = (from a in _context.Motosierra where a.MotosierraID == rental.MotosierraID select a).SingleOrDefault();
-                var Cliente = (from a in _context.Cliente where a.ClienteID == rental.ClienteID select a).SingleOrDefault();
-                rental.CodigoAlfanumericoMotosierra = Motosierra.CodigoAlfanumericoMotosierra;
-                rental.ClienteName = Cliente.ClienteName + " " + Cliente.ClienteApellido;
-                rental.ClienteID = Cliente.ClienteID;
-                rental.MotosierraID = Motosierra.MotosierraID;
-                Motosierra.EstaAlquilada = true;
-                _context.Add(rental);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    if (Motosierra.isDeleted == false)
+                    {
+                        if (rental.Stock <= Motosierra.StockStart && rental.Stock > 0)
+                        {
+                            var cantidad = Motosierra.Stock - rental.Stock;
+
+                            if (cantidad >= 0)
+                            {
+                                var Cliente = (from a in _context.Cliente where a.ClienteID == rental.ClienteID select a).SingleOrDefault();
+                                rental.CodigoAlfanumericoMotosierra = Motosierra.CodigoAlfanumericoMotosierra;
+                                rental.ClienteName = Cliente.ClienteName + " " + Cliente.ClienteApellido;
+                                rental.ClienteID = Cliente.ClienteID;
+                                rental.MotosierraID = Motosierra.MotosierraID;
+                                Motosierra.Stock = Motosierra.Stock - rental.Stock ;
+                                rental.MontoTotal = Motosierra.PrecioMotosierra * rental.Stock;
+                                _context.Add(rental);
+                                await _context.SaveChangesAsync();
+                                return RedirectToAction(nameof(Index));
+                                
+                            }
+                        }    
+
+                        
+                    }
+                    
+                }
+                catch (System.Exception)
+                {
+                    
+                    throw;
+                }
             }
             ViewData["ClienteID"] = new SelectList(_context.Cliente, "ClienteID", "ClienteName", rental.ClienteID);
-            ViewData["MotosierraID"] = new SelectList(_context.Motosierra.Where(x => x.EstaAlquilada == false && x.isDeleted == false), "MotosierraID", "CodigoAlfanumericoMotosierra");
+            ViewData["MotosierraID"] = new SelectList(_context.Motosierra.Where(x => x.Stock > 0 && x.isDeleted == false), "MotosierraID", "CodigoAlfanumericoMotosierra");
             return View(rental);
         }
 

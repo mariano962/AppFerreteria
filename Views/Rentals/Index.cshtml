@@ -1,14 +1,12 @@
 @model IEnumerable<AppFerreteria.Models.Rental>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Alquiler";
 }
 
 <body class="FondoRentals">
-   
-
-   <h1 class="TituloIndex">Alquiler</h1>
-
+    
+ <h1 class="TituloIndex">Alquiler</h1>
 <p>
     <a asp-action="Create" class="btn btn-success">Crear Alquiler</a>
 </p>
@@ -18,15 +16,21 @@
             <th>
                 @Html.DisplayNameFor(model => model.RentalDate)
             </th>
-             @* <th>
+              @* <th>
                 @Html.DisplayNameFor(model => model.ClienteApellido)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ClienteName)
-            </th>
+            </th>  *@
             <th>
+                @Html.DisplayNameFor(model => model.MontoTotal)
+            </th>
+            @* <th>
                 @Html.DisplayNameFor(model => model.CodigoAlfanumericoMotosierra)
             </th> *@
+             <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>  
             <th>
                 @Html.DisplayNameFor(model => model.Cliente)
             </th>
@@ -44,20 +48,26 @@
             </td>
              @* <td>
                 @Html.DisplayFor(modelItem => item.ClienteApellido)
-            </td> 
-            <td>
-                @Html.DisplayFor(modelItem => item.ClienteName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CodigoAlfanumericoMotosierra)
+                @Html.DisplayFor(modelItem => item.ClienteName)
             </td> *@
-              <td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MontoTotal)
+            </td> 
+            @* <td>
+                @Html.DisplayFor(modelItem => item.CodigoAlfanumericoMotosierra)
+            </td>  *@
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Cliente.ClienteApellido)
-            </td>  
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Motosierra.CodigoAlfanumericoMotosierra)
             </td>
-            <td>
+             <td>
                 @* <a asp-action="Edit" asp-route-id="@item.RentalID">Editar</a> | *@
                 <a asp-action="Details" asp-route-id="@item.RentalID" class="btn btn-warning">Detalle</a> 
                 @* <a asp-action="Delete" asp-route-id="@item.RentalID">Eliminar</a> *@
@@ -66,5 +76,4 @@
 }
     </tbody>
 </table>
-
 </body>

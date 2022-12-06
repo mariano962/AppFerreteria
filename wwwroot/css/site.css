@@ -22,7 +22,7 @@ body {
   background-position: initial;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-size: cover;
+  background-size: 100%;
 }
 .FondoClientes{
   background-image: url("../Imagen/celestePast.jpg");
@@ -67,8 +67,8 @@ body {
 }
 
 .ImagenMotosierras{
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
 }
 
 .col-sm-2 {
@@ -95,7 +95,7 @@ body {
   background-position: initial;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-size: cover;
+  background-size: 100%;
 }
 
 .logo{

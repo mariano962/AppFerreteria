@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AppFerreteria.Migrations
 {
-    public partial class Primera : Migration
+    public partial class Motosierra : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,10 +32,11 @@ namespace AppFerreteria.Migrations
                     MotosierraID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CodigoAlfanumericoMotosierra = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    PrecioMotosierra = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Codigodefabrica = table.Column<int>(type: "int", maxLength: 50, nullable: false),
+                    PrecioMotosierra = table.Column<int>(type: "int", nullable: false),
+                    Codigodefabrica = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    StockStart = table.Column<int>(type: "int", nullable: false),
+                    Stock = table.Column<int>(type: "int", nullable: false),
                     MotosierraImg = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
-                    EstaAlquilada = table.Column<bool>(type: "bit", nullable: false),
                     isDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -53,8 +54,10 @@ namespace AppFerreteria.Migrations
                     ClienteID = table.Column<int>(type: "int", nullable: false),
                     ClienteApellido = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ClienteName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MotosierraID = table.Column<int>(type: "int", nullable: true),
-                    CodigoAlfanumericoMotosierra = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    MontoTotal = table.Column<int>(type: "int", nullable: false),
+                    MotosierraID = table.Column<int>(type: "int", nullable: false),
+                    CodigoAlfanumericoMotosierra = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Stock = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -69,7 +72,8 @@ namespace AppFerreteria.Migrations
                         name: "FK_Rental_Motosierra_MotosierraID",
                         column: x => x.MotosierraID,
                         principalTable: "Motosierra",
-                        principalColumn: "MotosierraID");
+                        principalColumn: "MotosierraID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -83,7 +87,9 @@ namespace AppFerreteria.Migrations
                     ClienteApellido = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ClienteName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CodigoAlfanumericoMotosierra = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MotosierraID = table.Column<int>(type: "int", nullable: false)
+                    MotosierraID = table.Column<int>(type: "int", nullable: false),
+                    Stock = table.Column<int>(type: "int", nullable: false),
+                    MontoTotal = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

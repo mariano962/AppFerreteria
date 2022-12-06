@@ -50,7 +50,7 @@ namespace AppFerreteria.Controllers
         {
             ViewData["ClienteID"] = new SelectList(_context.Cliente, "ClienteID", "ClienteApellido");
             // ViewData["MotosierraID"] = new SelectList(_context.Motosierra, "MotosierraID", "CodigoAlfanumericoMotosierra");
-            ViewData["MotosierraID"] = new SelectList(_context.Motosierra.Where(x => x.EstaAlquilada == true && x.isDeleted == false), "MotosierraID", "CodigoAlfanumericoMotosierra");
+            ViewData["MotosierraID"] = new SelectList(_context.Motosierra.Where(x => x.StockStart != x.Stock && x.isDeleted == false), "MotosierraID", "CodigoAlfanumericoMotosierra");
             return View();
         }
 
@@ -59,27 +59,32 @@ namespace AppFerreteria.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ReturnID,ReturnDate,ClienteID,ClienteApellido,ClienteName,CodigoAlfanumericoMotosierra,MotosierraID")] Return @return)
+        public async Task<IActionResult> Create([Bind("ReturnID,ReturnDate,ClienteID,ClienteApellido,ClienteName,CodigoAlfanumericoMotosierra,MotosierraID,Stock,MontoTotal")] Return @return)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    var ClienteID = (from a in _context.Rental where a.ClienteID == @return.ClienteID && a.MotosierraID == @return.MotosierraID select a).SingleOrDefault();
+                    var ClienteID = (from a in _context.Rental where a.ClienteID == @return.ClienteID && a.MotosierraID == @return.MotosierraID select a).FirstOrDefault();
                     if (ClienteID != null)
                     {
                         if (ClienteID.RentalDate < @return.ReturnDate)
                         {
+                            if (@return.Stock == ClienteID.Stock)
+                            {
+                                
                                  var Motosierra = (from a in _context.Motosierra where a.MotosierraID == @return.MotosierraID select a).SingleOrDefault();
                                  var Cliente = (from a in _context.Cliente where a.ClienteID == @return.ClienteID select a).SingleOrDefault();
                                 @return.CodigoAlfanumericoMotosierra = Motosierra.CodigoAlfanumericoMotosierra;
                                 @return.ClienteName = Cliente.ClienteName + " " + Cliente.ClienteApellido;
                                 @return.ClienteID = Cliente.ClienteID;
                                 @return.MotosierraID = Motosierra.MotosierraID;
-                                Motosierra.EstaAlquilada = false;
+                                Motosierra.Stock = Motosierra.Stock + @return.Stock;
+                                @return.MontoTotal = Motosierra.PrecioMotosierra * @return.Stock;
                                 _context.Add(@return);
                                 await _context.SaveChangesAsync();
                                 return RedirectToAction(nameof(Index));
+                            }
                         }
                     }
               
@@ -92,7 +97,7 @@ namespace AppFerreteria.Controllers
               
             }
             ViewData["ClienteID"] = new SelectList(_context.Cliente, "ClienteID", "ClienteName", @return.ClienteID);
-            ViewData["MotosierraID"] = new SelectList(_context.Motosierra.Where(x => x.EstaAlquilada == true && x.isDeleted == false), "MotosierraID", "CodigoAlfanumericoMotosierra");
+            ViewData["MotosierraID"] = new SelectList(_context.Motosierra.Where(x => x.StockStart != x.Stock && x.isDeleted == false), "MotosierraID", "CodigoAlfanumericoMotosierra");
             return View(@return);
         }
 

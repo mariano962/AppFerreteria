@@ -26,12 +26,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="ClientePhone" class="control-label"></label>
-                <input asp-for="ClientePhone" class="form-control" />
+                <input asp-for="ClientePhone" class="form-control" onkeypress="return valideKey(event);" />
                 <span asp-validation-for="ClientePhone" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ClienteDNI" class="control-label"></label>
-                <input asp-for="ClienteDNI" class="form-control" />
+                <input asp-for="ClienteDNI" class="form-control" onkeypress="return valideKey(event);" />
                 <span asp-validation-for="ClienteDNI" class="text-danger"></span>
             </div><br>
             <div class="form-group">

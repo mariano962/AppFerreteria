@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AppFerreteria.Migrations.AppFerreteriaIdentityDb
 {
-    public partial class login : Migration
+    public partial class Motosierra : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

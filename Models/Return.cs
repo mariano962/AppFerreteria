@@ -33,6 +33,12 @@ namespace AppFerreteria.Models
         public virtual Motosierra? Motosierra { get; set; }
 
 
+        [Display(Name = "Cantidad de unidades")]
+        public int Stock { get; set; }
+
+         public int MontoTotal { get; set; }
+
+
         
     }
  }

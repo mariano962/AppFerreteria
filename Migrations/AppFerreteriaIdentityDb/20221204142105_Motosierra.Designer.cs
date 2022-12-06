@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppFerreteria.Migrations.AppFerreteriaIdentityDb
 {
     [DbContext(typeof(AppFerreteriaIdentityDbContext))]
-    [Migration("20221117141342_login")]
-    partial class login
+    [Migration("20221204142105_Motosierra")]
+    partial class Motosierra
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -24,6 +24,10 @@ namespace AppFerreteria.Models
         public string? ClienteName { get; set; }
 
 
+        [Display(Name = "Total a pagar")]
+        public int MontoTotal { get; set; }
+
+
 
 
         [Display(Name = "Motosierra ")]
@@ -31,10 +35,16 @@ namespace AppFerreteria.Models
 
         public  string? CodigoAlfanumericoMotosierra  { get; set; }
 
+
+      [Display(Name = "Cantidad de unidades")]
+        public int Stock { get; set; }
+
         
         public virtual Cliente? Cliente { get; set; }
 
         public virtual Motosierra? Motosierra { get; set; }
+
+
 
   
     }

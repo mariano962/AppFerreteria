@@ -72,16 +72,17 @@ namespace AppFerreteria.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool>("EstaAlquilada")
-                        .HasColumnType("bit");
-
                     b.Property<byte[]>("MotosierraImg")
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<string>("PrecioMotosierra")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<int>("PrecioMotosierra")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StockStart")
+                        .HasColumnType("int");
 
                     b.Property<bool>("isDeleted")
                         .HasColumnType("bit");
@@ -111,11 +112,17 @@ namespace AppFerreteria.Migrations
                     b.Property<string>("CodigoAlfanumericoMotosierra")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("MontoTotal")
+                        .HasColumnType("int");
+
                     b.Property<int>("MotosierraID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("RentalDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
 
                     b.HasKey("RentalID");
 
@@ -146,11 +153,17 @@ namespace AppFerreteria.Migrations
                     b.Property<string>("CodigoAlfanumericoMotosierra")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("MontoTotal")
+                        .HasColumnType("int");
+
                     b.Property<int>("MotosierraID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ReturnDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
 
                     b.HasKey("ReturnID");
 

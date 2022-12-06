@@ -5,8 +5,8 @@
 }
 
 <body class="FondoReturn">
-   
-<h1 class="TituloIndex">Devoluciones</h1>
+    <h1 class="TituloIndex">Devoluciones</h1>
+
 <p>
     <a asp-action="Create" class="btn btn-success">Crear Devolución</a>
 </p>
@@ -31,6 +31,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Motosierra)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MontoTotal)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -49,11 +55,17 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Cliente.ClienteApellido)
             </td>
-            @* <td>
+             @* <td>
                 @Html.DisplayFor(modelItem => item.CodigoAlfanumericoMotosierra)
-            </td> *@
+            </td>  *@
             <td>
                 @Html.DisplayFor(modelItem => item.Motosierra.CodigoAlfanumericoMotosierra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MontoTotal)
             </td>
             <td>
                 @* <a asp-action="Edit" asp-route-id="@item.ReturnID" class="btn btn-warning">Editar</a> | *@

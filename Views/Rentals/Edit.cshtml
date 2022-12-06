@@ -4,13 +4,12 @@
     ViewData["Title"] = "Edit";
 }
 
-<body class="FondoRentals">
-    
+<h1>Edit</h1>
 
-<h4 class="TituloEditCreate animate__animated animate__rotateInDownLeft">Rental</h4>
-
+<h4>Rental</h4>
+<hr />
 <div class="row">
-    <div class="col-md-4 PalabrasFormularios">
+    <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="RentalID" />
@@ -35,6 +34,11 @@
                 <span asp-validation-for="ClienteName" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="MontoTotal" class="control-label"></label>
+                <input asp-for="MontoTotal" class="form-control" />
+                <span asp-validation-for="MontoTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="MotosierraID" class="control-label"></label>
                 <select asp-for="MotosierraID" class="form-control" asp-items="ViewBag.MotosierraID"></select>
                 <span asp-validation-for="MotosierraID" class="text-danger"></span>
@@ -43,16 +47,20 @@
                 <label asp-for="CodigoAlfanumericoMotosierra" class="control-label"></label>
                 <input asp-for="CodigoAlfanumericoMotosierra" class="form-control" />
                 <span asp-validation-for="CodigoAlfanumericoMotosierra" class="text-danger"></span>
-            </div><br>
+            </div>
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <label asp-for="Stock" class="control-label"></label>
+                <input asp-for="Stock" class="form-control" />
+                <span asp-validation-for="Stock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div><br>
-    <a asp-action="Index" class="btn btn-primary">Vovler a la lista</a>
+<div>
+    <a asp-action="Index">Back to List</a>
 </div>
-</body>
 

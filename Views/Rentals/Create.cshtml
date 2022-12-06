@@ -4,9 +4,9 @@
     ViewData["Title"] = "Alquiler";
 }
 
+
 <body class="FondoRentals">
     
-
 <h4 class="TituloEditCreate animate__animated animate__fadeInUpBig">Crear alquileres</h4>
 
 <div class="row">
@@ -21,40 +21,49 @@
             <div class="form-group">
                 <label asp-for="ClienteID" class="control-label"></label>
                 @* <select asp-for="ClienteID" class ="form-control" asp-items="ViewBag.ClienteID"></select> *@
-                @Html.DropDownList("ClienteID", null, htmlAttributes: new { @class = "form-control" })
+                 @Html.DropDownList("ClienteID", null, htmlAttributes: new { @class = "form-control" })
                 <span asp-validation-for="ClienteID" class="text-danger"></span>
             </div>
-             @* <div class="form-group">
+            @* <div class="form-group">
                 <label asp-for="ClienteApellido" class="control-label"></label>
                 <input asp-for="ClienteApellido" class="form-control" />
                 <span asp-validation-for="ClienteApellido" class="text-danger"></span>
-            </div> 
+            </div>
             <div class="form-group">
                 <label asp-for="ClienteName" class="control-label"></label>
                 <input asp-for="ClienteName" class="form-control" />
                 <span asp-validation-for="ClienteName" class="text-danger"></span>
             </div> *@
+            @* <div class="form-group">
+                <label asp-for="MontoTotal" class="control-label"></label>
+                <input asp-for="MontoTotal" class="form-control" />
+                <span asp-validation-for="MontoTotal" class="text-danger"></span>
+            </div> *@
             <div class="form-group">
                 <label asp-for="MotosierraID" class="control-label"></label>
-                @Html.DropDownList("MotosierraID", null, htmlAttributes: new { @class = "form-control" })
                 <span asp-validation-for="MotosierraID" class="text-danger"></span>
-                @* <select asp-for="MotosierraID" class ="form-control" asp-items="ViewBag.MotosierraID"></select> *@
-            </div> <br>
+                 @Html.DropDownList("MotosierraID", null, htmlAttributes: new { @class = "form-control" })
+                @* <select asp-for="MotosierraID" class ="form-control" asp-items="ViewBag.MotosierraID"></select>
+            </div> *@
             @* <div class="form-group">
                 <label asp-for="CodigoAlfanumericoMotosierra" class="control-label"></label>
                 <input asp-for="CodigoAlfanumericoMotosierra" class="form-control" />
                 <span asp-validation-for="CodigoAlfanumericoMotosierra" class="text-danger"></span>
             </div> *@
             <div class="form-group">
+                <label asp-for="Stock" class="control-label"></label>
+                <input asp-for="Stock" class="form-control" />
+                <span asp-validation-for="Stock" class="text-danger"></span>
+            </div><br>
+               <div class="form-group">
                 <input type="submit" value="Crear" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div><br>
 
-<div>
-    <a asp-action="Index" class="btn btn-primary">Volver a la lista</a>
+<div><br>
+   <a asp-action="Index" class="btn btn-primary">Volver a la lista</a>
 </div>
-
 
 </body>

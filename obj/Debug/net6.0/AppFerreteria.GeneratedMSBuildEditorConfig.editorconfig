@@ -8,177 +8,177 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AppFerreteria
 build_property.RootNamespace = AppFerreteria
-build_property.ProjectDir = c:\Users\ASUS\Desktop\AppFerreteria\
+build_property.ProjectDir = C:\Users\ASUS\Desktop\AppFerreteria\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\ASUS\Desktop\AppFerreteria
+build_property.MSBuildProjectDirectory = C:\Users\ASUS\Desktop\AppFerreteria
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Clientes/Create.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Clientes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Clientes/Delete.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Clientes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Clientes/Details.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Clientes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Clientes/Edit.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Clientes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Clientes/Index.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Clientes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Home/Index.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Home/Privacy.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Motosierras/Create.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Motosierras/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90b3NpZXJyYXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Motosierras/Delete.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Motosierras/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90b3NpZXJyYXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Motosierras/Details.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Motosierras/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90b3NpZXJyYXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Motosierras/Edit.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Motosierras/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90b3NpZXJyYXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Motosierras/Index.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Motosierras/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90b3NpZXJyYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Rentals/Create.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Rentals/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Rentals/Delete.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Rentals/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Rentals/Details.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Rentals/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Rentals/Edit.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Rentals/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Rentals/Index.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Rentals/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Returns/Create.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Returns/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Returns/Delete.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Returns/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Returns/Details.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Returns/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Returns/Edit.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Returns/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Returns/Index.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Returns/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Shared/Error.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/_ViewImports.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/_ViewStart.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/ASUS/Desktop/AppFerreteria/Views/Shared/_Layout.cshtml]
+[C:/Users/ASUS/Desktop/AppFerreteria/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-mldzvot6br

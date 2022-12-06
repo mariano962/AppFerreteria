@@ -15,8 +15,8 @@ namespace AppFerreteria.Models
 
         [Display(Name = "Precio de la motosierra")]
         [Required(ErrorMessage = "Este valor es obligatorio.")]
-        [MaxLength(50, ErrorMessage = "El largo maximo es de {0} caracteres.")]
-        public string? PrecioMotosierra { get; set; }
+        
+        public int PrecioMotosierra { get; set; }
 
 
         [Display(Name = "Codigo de Fabrica")]
@@ -25,13 +25,21 @@ namespace AppFerreteria.Models
         public string? Codigodefabrica { get; set; }
 
 
+        [Display(Name = "Stock Inicial")]
+        [Required(ErrorMessage = "Este valor es obligatorio.")]
+        public int StockStart { get; set; }
+
+        [Display(Name = "Stock Actual")]
+       
+        public int Stock { get; set; }
+
+
       
         [Display(Name = "Imagen")]
         public byte[]? MotosierraImg { get; set; }
         
 
-        [Display(Name = "Alquilada")]
-        public bool EstaAlquilada { get; set; }
+        
 
         [Display(Name = "Libre")]
         public bool isDeleted { get; set; }

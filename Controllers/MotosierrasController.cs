@@ -55,7 +55,7 @@ namespace AppFerreteria.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MotosierraID,CodigoAlfanumericoMotosierra,PrecioMotosierra,Codigodefabrica,EstaAlquilada,isDeleted")] Motosierra motosierra, IFormFile MotosierraImg )
+        public async Task<IActionResult> Create([Bind("MotosierraID,CodigoAlfanumericoMotosierra,PrecioMotosierra,Codigodefabrica,Stock,StockStart,isDeleted")] Motosierra motosierra, IFormFile MotosierraImg )
         {
            if (ModelState.IsValid)
             {
@@ -69,6 +69,7 @@ namespace AppFerreteria.Controllers
                         Img = ms1.ToArray();
                     }
                     motosierra.MotosierraImg = Img;
+                    motosierra.Stock = motosierra.StockStart;
 
                    
                 }
@@ -102,7 +103,7 @@ namespace AppFerreteria.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MotosierraID,CodigoAlfanumericoMotosierra,PrecioMotosierra,Codigodefabrica,EstaAlquilada,isDeleted")] Motosierra motosierra, IFormFile MotosierraImg)
+        public async Task<IActionResult> Edit(int id, [Bind("MotosierraID,CodigoAlfanumericoMotosierra,PrecioMotosierra,Codigodefabrica,Stock,StockStart,isDeleted")] Motosierra motosierra, IFormFile MotosierraImg)
         {
             if (id != motosierra.MotosierraID)
             {
@@ -113,23 +114,39 @@ namespace AppFerreteria.Controllers
             {
                 try
                 {
+                       var Motosierras = (from a in _context.Motosierra where a.MotosierraID == id select a).FirstOrDefault();
+                       var StockActual = motosierra.StockStart - Motosierras.StockStart;
+
                     if (MotosierraImg != null && MotosierraImg.Length > 0)
-                {
-                    byte[]? Img = null;
-                    using (var fs1 = MotosierraImg.OpenReadStream())
-                    using (var ms1 = new MemoryStream())
                     {
-                        fs1.CopyTo(ms1);
-                        Img = ms1.ToArray();
+                        byte[]? Img = null;
+                        using (var fs1 = MotosierraImg.OpenReadStream())
+                        using (var ms1 = new MemoryStream())
+                        {
+                            fs1.CopyTo(ms1);
+                            Img = ms1.ToArray();
+                        }
+                       
+                       
+                        foreach (var item in _context.Motosierra)
+                        {
+                            if (item.MotosierraID == id )
+                            {
+                            item.StockStart = motosierra.StockStart;
+                            item.Stock = Motosierras.Stock + StockActual;
+                            item.MotosierraImg = Img;
+                                
+                            }
+                        }
+                        _context.SaveChanges();
+                    
                     }
-                    motosierra.MotosierraImg = Img;
 
-                   
-                }
-
-                    _context.Update(motosierra);
-                    await _context.SaveChangesAsync();
-                }
+                        // _context.Update(motosierra);
+                        await _context.SaveChangesAsync();
+                        
+                    }                
+                
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!MotosierraExists(motosierra.MotosierraID))
@@ -171,7 +188,7 @@ namespace AppFerreteria.Controllers
         {
 
             var motosierra = await _context.Motosierra.FindAsync(id);
-            if (motosierra.EstaAlquilada == true)
+            if (motosierra.Stock != motosierra.StockStart)
             {
                 return RedirectToAction(nameof(Index));
             }

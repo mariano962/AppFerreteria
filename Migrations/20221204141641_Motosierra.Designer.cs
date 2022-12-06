@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppFerreteria.Migrations
 {
     [DbContext(typeof(AppFerreteriaContext))]
-    [Migration("20221116194918_AntesDeprobar")]
-    partial class AntesDeprobar
+    [Migration("20221204141641_Motosierra")]
+    partial class Motosierra
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -69,21 +69,22 @@ namespace AppFerreteria.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("Codigodefabrica")
+                    b.Property<string>("Codigodefabrica")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("int");
-
-                    b.Property<bool>("EstaAlquilada")
-                        .HasColumnType("bit");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<byte[]>("MotosierraImg")
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<string>("PrecioMotosierra")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<int>("PrecioMotosierra")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StockStart")
+                        .HasColumnType("int");
 
                     b.Property<bool>("isDeleted")
                         .HasColumnType("bit");
@@ -113,11 +114,17 @@ namespace AppFerreteria.Migrations
                     b.Property<string>("CodigoAlfanumericoMotosierra")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("MotosierraID")
+                    b.Property<int>("MontoTotal")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MotosierraID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("RentalDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
 
                     b.HasKey("RentalID");
 
@@ -148,11 +155,17 @@ namespace AppFerreteria.Migrations
                     b.Property<string>("CodigoAlfanumericoMotosierra")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("MontoTotal")
+                        .HasColumnType("int");
+
                     b.Property<int>("MotosierraID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ReturnDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
 
                     b.HasKey("ReturnID");
 
@@ -173,7 +186,9 @@ namespace AppFerreteria.Migrations
 
                     b.HasOne("AppFerreteria.Models.Motosierra", "Motosierra")
                         .WithMany()
-                        .HasForeignKey("MotosierraID");
+                        .HasForeignKey("MotosierraID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Cliente");
 
