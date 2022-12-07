@@ -51,6 +51,7 @@ namespace AppFerreteria.Controllers
             ViewData["ClienteID"] = new SelectList(_context.Cliente, "ClienteID", "ClienteApellido");
             // ViewData["MotosierraID"] = new SelectList(_context.Motosierra, "MotosierraID", "CodigoAlfanumericoMotosierra");
             ViewData["MotosierraID"] = new SelectList(_context.Motosierra.Where(x => x.StockStart != x.Stock && x.isDeleted == false), "MotosierraID", "CodigoAlfanumericoMotosierra");
+            
             return View();
         }
 

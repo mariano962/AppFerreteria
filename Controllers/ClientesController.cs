@@ -59,9 +59,14 @@ namespace AppFerreteria.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(cliente);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var AllCliente = (from a in _context.Cliente where a.ClienteDNI == cliente.ClienteDNI select a).Count();
+                if (AllCliente == 0)
+                {
+                    _context.Add(cliente);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                    
+                }
             }
             return View(cliente);
         }
@@ -98,8 +103,14 @@ namespace AppFerreteria.Controllers
             {
                 try
                 {
-                    _context.Update(cliente);
-                    await _context.SaveChangesAsync();
+                     var AllCliente = (from a in _context.Cliente where a.ClienteDNI == cliente.ClienteDNI select a).Count();
+                     if (AllCliente == 0)
+                     {
+                        _context.Update(cliente);
+                         await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+                        
+                     }
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -112,7 +123,6 @@ namespace AppFerreteria.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
             return View(cliente);
         }

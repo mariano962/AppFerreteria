@@ -59,6 +59,10 @@ namespace AppFerreteria.Controllers
         {
            if (ModelState.IsValid)
             {
+                var AllMotosierras = (from a in _context.Motosierra where a.Codigodefabrica == motosierra.Codigodefabrica select a).Count();
+                if (AllMotosierras == 0)
+                {
+                    
                 if (MotosierraImg != null && MotosierraImg.Length > 0)
                 {
                     byte[]? Img = null;
@@ -77,6 +81,7 @@ namespace AppFerreteria.Controllers
                     _context.Add(motosierra);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
+                }
 
             }
             return View(motosierra);
@@ -114,32 +119,37 @@ namespace AppFerreteria.Controllers
             {
                 try
                 {
+                       var AllMotosierras = (from a in _context.Motosierra where a.Codigodefabrica == motosierra.Codigodefabrica select a).Count();
                        var Motosierras = (from a in _context.Motosierra where a.MotosierraID == id select a).FirstOrDefault();
                        var StockActual = motosierra.StockStart - Motosierras.StockStart;
-
-                    if (MotosierraImg != null && MotosierraImg.Length > 0)
+                    if (AllMotosierras == 0)
                     {
-                        byte[]? Img = null;
-                        using (var fs1 = MotosierraImg.OpenReadStream())
-                        using (var ms1 = new MemoryStream())
+                        if (MotosierraImg != null && MotosierraImg.Length > 0)
                         {
-                            fs1.CopyTo(ms1);
-                            Img = ms1.ToArray();
-                        }
-                       
-                       
-                        foreach (var item in _context.Motosierra)
-                        {
-                            if (item.MotosierraID == id )
+                            byte[]? Img = null;
+                            using (var fs1 = MotosierraImg.OpenReadStream())
+                            using (var ms1 = new MemoryStream())
                             {
-                            item.StockStart = motosierra.StockStart;
-                            item.Stock = Motosierras.Stock + StockActual;
-                            item.MotosierraImg = Img;
-                                
+                                fs1.CopyTo(ms1);
+                                Img = ms1.ToArray();
                             }
+                        
+                        
+                            foreach (var item in _context.Motosierra)
+                            {
+                                if (item.MotosierraID == id )
+                                {
+                                item.StockStart = motosierra.StockStart;
+                                item.Stock = Motosierras.Stock + StockActual;
+                                item.MotosierraImg = Img;
+                                    
+                                }
+                            }
+                            _context.SaveChanges();
+                            return RedirectToAction(nameof(Index));
+                        
                         }
-                        _context.SaveChanges();
-                    
+                        
                     }
 
                         // _context.Update(motosierra);
@@ -158,7 +168,6 @@ namespace AppFerreteria.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
             return View(motosierra);
         }
